@@ -1,5 +1,87 @@
-<html>
-<body>
-hi Page 
-</body>
-</html>
+<!DOCTYPE html>  
+<html>  
+  <head>  
+    <title>計算機</title>  
+    <style>  
+      /* 設置計算機外殼樣式 */  
+      .calculator {  
+        width: 300px;  
+        padding: 10px;  
+        background-color: #f0f0f0;  
+        border: 1px solid #ccc;  
+        border-radius: 5px;  
+      }  
+  
+      /* 設置計算機輸入框樣式 */  
+      .calculator input {  
+        width: 100%;  
+        margin-bottom: 10px;  
+        padding: 5px;  
+        font-size: 20px;  
+        border: 1px solid #ccc;  
+        border-radius: 3px;  
+      }  
+  
+      /* 設置計算機按鈕樣式 */  
+      .calculator button {  
+        width: 50%;  
+        padding: 5px;  
+        font-size: 20px;  
+        border: 1px solid #ccc;  
+        border-radius: 3px;  
+        background-color: #fff;  
+        cursor: pointer;  
+      }  
+  
+      /* 設置計算機按鈕容器樣式 */  
+      .calculator .button-container {  
+        display: flex;  
+        justify-content: space-between;  
+      }  
+    </style>  
+  </head>  
+  <body>  
+    <div class="calculator">  
+      <input type="text" id="result" placeholder="0" readonly>  
+      <div class="button-container">  
+        <button onclick="addToResult('1')">1</button>  
+        <button onclick="addToResult('2')">2</button>  
+        <button onclick="addToResult('3')">3</button>  
+        <button onclick="addToResult('+')">+</button>  
+      </div>  
+      <div class="button-container">  
+        <button onclick="addToResult('4')">4</button>  
+        <button onclick="addToResult('5')">5</button>  
+        <button onclick="addToResult('6')">6</button>  
+        <button onclick="addToResult('-')">-</button>  
+      </div>  
+      <div class="button-container">  
+        <button onclick="addToResult('7')">7</button>  
+        <button onclick="addToResult('8')">8</button>  
+        <button onclick="addToResult('9')">9</button>  
+        <button onclick="addToResult('*')">&times;</button>  
+      </div>  
+      <div class="button-container">  
+        <button onclick="addToResult('0')">0</button>  
+        <button onclick="addToResult('.')">.</button>  
+        <button onclick="clearResult()">C</button>  
+        <button onclick="calculateResult()">=</button>  
+      </div>  
+    </div>  
+    <script>  
+      /* 定義計算機相關函數 */  
+      function addToResult(value) {  
+        document.getElementById('result').value += value;  
+      }  
+  
+      function clearResult() {  
+        document.getElementById('result').value = '';  
+      }  
+  
+      function calculateResult() {  
+        var result = eval(document.getElementById('result').value);  
+        document.getElementById('result').value = result;  
+      }  
+    </script>  
+  </body>  
+</html>  
